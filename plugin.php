@@ -15,17 +15,17 @@ class statimize extends Plugin {
                 
                 $html = '<textarea class="form-control" rows="3" name="concealItems" id="concealItems">'.$this->getValue('concealItems').'</textarea>';
         
-                return $htmml;
+                return $html;
         }
   
   
         public function concealItems() {
   
                 $html = 
-                  'let bin = document.getElementsByClassName('nav-link');' +
+                  'let bin = document.getElementsByClassName("nav-link");' +
                   'for (let i=0; i<bin.length; i++) {' +
-                      'if (bin[i].text == $this.getValue('concealItems')) {' +
-                          'bin[i].parentElement.style.display = 'none';' +
+                      'if (bin[i].text == $this.getValue("concealItems")) {' +
+                          'bin[i].parentElement.style.display = "none";' +
                       '}' +
                   '}';
           
