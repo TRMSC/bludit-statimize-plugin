@@ -32,3 +32,4 @@ class pluginStatimize extends Plugin {
                 return $html;
 
        }
+}
