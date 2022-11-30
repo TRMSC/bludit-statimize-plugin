@@ -1,6 +1,6 @@
 <?php
 
-class statimize extends Plugin {
+class pluginStatimize extends Plugin {
   
         public function afterPageCreate() {
           
