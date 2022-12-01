@@ -12,7 +12,7 @@ class pluginStatimize extends Plugin {
   
   
         public function form() {
-                
+
                 $html = '<textarea class="form-control" rows="3" name="concealItems" id="concealItems">'.$this->getValue('concealItems').'</textarea>';
         
                 return $html;
@@ -21,19 +21,12 @@ class pluginStatimize extends Plugin {
   
         public function siteBodyEnd() {
   
-                $x = 
-                  '<script>' +
-                  'console.log("check");' +
-                  'let bin = document.getElementsByClassName("nav-link");' +
-                  'for (let i=0; i<bin.length; i++) {' +
-                      'if (bin[i].text == $this.getValue("concealItems")) {' +
-                          'bin[i].parentElement.style.display = "none";' +
-                      '}' +
-                  '}'+
-                  '</script>';
-                $y = $this->getValue("concealItems");
+                $concealItems = preg_split("/\r\n|\n|\r/", $this->getValue("concealItems"));
 
-                $html = '<script src="'.HTML_PATH_PLUGINS.'statimize/statimize.js"></script><script>removeEntries("'.$y.'");</script>';
+                $html = '<script src="'.HTML_PATH_PLUGINS.'statimize/statimize.js"></script>';
+                foreach ($concealItems as $value) {
+                    $html .= '<script>removeEntries("'.$value.'");</script>';
+                }
           
                 return $html;
 
