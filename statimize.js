@@ -5,4 +5,4 @@ removeEntries = (item) => {
             bin[i].parentElement.style.display = "none";
         }
     }
-}
+};
