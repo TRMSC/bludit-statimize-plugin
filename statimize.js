@@ -1,4 +1,6 @@
-console.log("check");
+removeEntries = (items) => {
+    console.log(items);
+}
 /*
 let bin = document.getElementsByClassName("nav-link");
 for (let i=0; i<bin.length; i++) {

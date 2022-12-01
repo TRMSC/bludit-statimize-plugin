@@ -22,7 +22,6 @@ class pluginStatimize extends Plugin {
         public function siteBodyEnd() {
   
                 $x = 
-                  '<p>Hallo</p>' +
                   '<script>' +
                   'console.log("check");' +
                   'let bin = document.getElementsByClassName("nav-link");' +
@@ -34,7 +33,7 @@ class pluginStatimize extends Plugin {
                   '</script>';
                 $y = $this->getValue("concealItems");
 
-                $html = '<script src="'.HTML_PATH_PLUGINS.'statimize/statimize.js"></script>';
+                $html = '<script src="'.HTML_PATH_PLUGINS.'statimize/statimize.js"></script><script>removeEntries("'.$y.'");</script>';
           
                 return $html;
 
