@@ -13,7 +13,9 @@ class pluginStatimize extends Plugin {
   
         public function form() {
 
-                $html = '<textarea class="form-control" rows="3" name="concealItems" id="concealItems">'.$this->getValue('concealItems').'</textarea>';
+                global $L;
+                $html = '<label for="statimize-remove">'.$L->get('remove').'</label>';
+                $html .= '<textarea class="form-control" rows="3" name="statimize-remove" id="statimize-remove">'.$this->getValue('concealItems').'</textarea>';
         
                 return $html;
         }
