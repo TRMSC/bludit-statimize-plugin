@@ -40,17 +40,4 @@ class pluginStatimize extends Plugin {
 
         }
   
-
-        public function siteBodyEnd() {
-
-                $html = '<script src="'.HTML_PATH_PLUGINS.'statimize/statimize.js"></script>';
-                $concealItems = preg_split("/\r\n|\n|\r/", $this->getValue("concealItems"));
-                foreach ($concealItems as $value) {
-                    $html .= '<script>removeEntries("'.$value.'");</script>';
-                }
-                $html .= '<script>showNavbar();</script>;';
-          
-                return $html;
-
-       }
 }
