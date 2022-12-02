@@ -26,7 +26,18 @@ class pluginStatimize extends Plugin {
         
                 return $html;
         }
+
+
+        public function siteHead() {
+
+                $file = $this->workspace().'remove.css';
+                $html = '<link rel="stylesheet" type="text/css" href="'.$file.'">';
+
+                return $html;
+
+        }
   
+
         public function siteBodyEnd() {
 
                 $html = '<script src="'.HTML_PATH_PLUGINS.'statimize/statimize.js"></script>';
