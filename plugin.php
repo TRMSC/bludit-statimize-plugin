@@ -24,8 +24,12 @@ class pluginStatimize extends Plugin {
                 file_put_contents($file, $entry);
 
                 global $L;
-                $html = '<label for="concealItems">'.$L->get('remove').'</label>';
+                $OLD = '<label for="concealItems">'.$L->get('remove-l1').'</label>';
+                $html = '<h4>'.$L->get('remove-header').'</h4>';
+                $html .= '<p>'.$L->get('remove-l1').'<br>';
+                $html .= $L->get('remove-l2').'</p>';
                 $html .= '<textarea class="form-control" rows="3" name="concealItems" id="concealItems">'.$this->getValue('concealItems').'</textarea>';
+                $html .= '<sub>'.$L->get('remove-tip').'</sub>';
 
                 return $html;
         }

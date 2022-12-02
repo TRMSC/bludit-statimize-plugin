@@ -4,5 +4,8 @@
 		"name": "Statimize",
 		"description": "Customize static site entries."
 	},
-	"remove": "Type in parts of static site urls that should be removed from the navbar. Use a several line for every item."
+	"remove-header": "Remove items from navbar",
+	"remove-l1": "Type in static site urls for removing their items from the navbar.",
+	"remove-l2": "Use a several line for every item.",
+	"remove-tip": "Tip: You can type in the urls completely but unique parts of the urls are also sufficient."
 }
