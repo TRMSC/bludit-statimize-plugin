@@ -31,7 +31,9 @@ class pluginStatimize extends Plugin {
         public function siteHead() {
 
                 $file = $this->workspace().'remove.css';
-                $html = '<link rel="stylesheet" type="text/css" href="'.$file.'">';
+                $file = explode('/', $file);
+                $file = '../'.$file[count($file) - 4].'/'.$file[count($file)-3].'/'.$file[count($file) - 2].'/'.$file[count($file) - 1];
+                $html = '<link rel="stylesheet" type="text/css" href="'.$file.'"/>';
 
                 return $html;
 
