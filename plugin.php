@@ -13,6 +13,13 @@ class pluginStatimize extends Plugin {
   
         public function form() {
 
+                $concealItems = preg_split("/\r\n|\n|\r/", $this->getValue("concealItems"));
+                foreach ($concealItems as $value) {
+                    $entry .= '.nav-link[href*="'.$value.'"]{display = none;} ';
+                }
+                $file = $this->workspace().'remove.css';
+                file_put_contents($file, $entry);
+
                 global $L;
                 $html = '<label for="concealItems">'.$L->get('remove').'</label>';
                 $html .= '<textarea class="form-control" rows="3" name="concealItems" id="concealItems">'.$this->getValue('concealItems').'</textarea>';
