@@ -15,7 +15,7 @@ class pluginStatimize extends Plugin {
 
                 $concealItems = preg_split("/\r\n|\n|\r/", $this->getValue("concealItems"));
                 foreach ($concealItems as $value) {
-                    $entry .= '.nav-link[href*="'.$value.'"]{display = none;} ';
+                    $entry .= '.nav-link[href*="'.$value.'"]{display: none;} ';
                 }
                 $file = PATH_PLUGINS.'statimize/remove.css';
                 file_put_contents($file, $entry);
