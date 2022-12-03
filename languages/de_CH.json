@@ -1,0 +1,11 @@
+{
+	"plugin-data":
+	{
+		"name": "Statimize",
+		"description": "Sichtbarkeit statischer Seiten anpassen, indem deren Einträge aus der Navigationsleiste entfernt werden."
+	},
+	"remove-header": "Einträge in der Navigationsleiste entfernen",
+	"remove-l1": "URLs statischer Seiten eingeben, um deren Einträge aus der Navigationsleiste zu entfernen.",
+	"remove-l2": "Für jede URL wird eine neue Zeile verwendet.",
+	"remove-tip": "Tip: URLs können komplett eingegeben bzw. kopiert werden - einmal vorkommende Teile reichen jedoch ebenso aus."
+}
