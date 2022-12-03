@@ -1,6 +1,6 @@
 # Bludit - Statimize plugin
 
-Customize visibility of static pages in the navigation bar by removing their items.  
+Customize visibility of static pages in the navigation bar by hiding their items.  
 Support for adding items to the footer is planned.
 
 ## Compatibility
@@ -22,4 +22,4 @@ Feedback and contributions are welcome.
 
 #### Settings:
 - Go to the plugin area of the admin panel, activate the Statimize plugin and open its settings.
-- Type in static site urls for removing their items from the navbar - use a several line for every url.
+- Type in or copy static site urls in the text area for removing their items from the navbar - use a several line for every url.
