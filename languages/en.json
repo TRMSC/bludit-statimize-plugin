@@ -2,7 +2,7 @@
 	"plugin-data":
 	{
 		"name": "Statimize",
-		"description": "Customize static site entries."
+		"description": "Customize visibility of static pages in the navigation bar by hiding their items."
 	},
 	"remove-header": "Remove items from navbar",
 	"remove-l1": "Type in static site urls for removing their items from the navbar.",
