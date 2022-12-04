@@ -24,8 +24,9 @@ Feedback and contributions are welcome.
 #### Settings:
 - Go to the plugin area of the admin panel, activate the Statimize plugin and open its settings.
 - Type in or copy static site urls in the text area for removing their items from the navbar - use a several line for every url.
+- Save your entries.
 
-___Maybe you have to clear the cache of your website for seeing the changes___
+___Maybe you have to clear the websites cache for seeing the changes___
 _(CTRL/ STRG + F5 or within the browser settings)._
 
 ## Changelog
