@@ -18,9 +18,13 @@ Feedback and contributions are welcome.
 ## How to
 
 #### Installation:
-- __[Download the latest release](https://github.com/TRMSC/bludit-statimize-plugin/releases)__.
+- __[Download the latest release](https://github.com/TRMSC/bludit-statimize-plugin/releases/latest)__.
 - Load the Statimize folder in your Bludit plugin directory ``YOUR INSTALLATION / bl-plugins /``. 
 
 #### Settings:
 - Go to the plugin area of the admin panel, activate the Statimize plugin and open its settings.
 - Type in or copy static site urls in the text area for removing their items from the navbar - use a several line for every url.
+
+## Changelog
+
+Changes are viewable within the [releases area](https://github.com/TRMSC/bludit-statimize-plugin/releases).
