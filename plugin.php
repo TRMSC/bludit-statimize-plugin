@@ -15,7 +15,7 @@ class pluginStatimize extends Plugin {
 
                 $concealItems = preg_split("/\r\n|\n|\r/", $this->getValue("concealItems"));
                 foreach ($concealItems as $value) {
-                        $entry .= '.nav-link[href*="'.$value.'"]{display: none;} ';
+                        $entry .= '.nav-link[href*="'.trim($value).'"]{display: none;} ';
                 }
 
                 $folder = explode('/', __FILE__);

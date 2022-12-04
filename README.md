@@ -10,6 +10,7 @@ Statimize plugin was tested with the following themes:
 - Alternative
 - Blog-X
 - [Smart](https://github.com/TRMSC/bludit-smart-theme)
+- [Dark](https://themes.bludit.com/de/theme/darktheme)
 
 Maybe [other themes](https://themes.bludit.com/) are also supported - feel free to try!  
 Feedback and contributions are welcome.
