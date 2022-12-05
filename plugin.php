@@ -40,6 +40,7 @@ class pluginStatimize extends Plugin {
 
                 //$item = 'const re = /\[([^\[]*)\]\((.*)\)/; ';
                 //$item .= 'window.onload = funtion () { ';
+                
                 $item .= 'items = [';
 
                 $supplementItems = preg_split("/\r\n|\n|\r/", $this->getValue("supplementItems"));
