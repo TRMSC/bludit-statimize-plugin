@@ -70,13 +70,15 @@ class pluginStatimize extends Plugin {
 
         public function siteHead() {
 
-                // NAVBAR
+                // LOAD CSS AND JAVASCRIPTS
 
                 $folder = explode('/', __FILE__);
                 $folder = $folder[count($folder)-2];
-                $file = HTML_PATH_PLUGINS.$folder.'/remove.css';
+                $file = HTML_PATH_PLUGINS.$folder;
 
-                $html = '<link rel="stylesheet" type="text/css" href="..'.$file.'"/>';
+                $html = '<link rel="stylesheet" type="text/css" href="..'.$file.'/remove.css"/>';
+                $html .= '<script src="..'.$file.'/add.js"/></script>';
+                $html .= '<script src="..'.$file.'/statimize.js"/></script>';
 
                 return $html;
 
