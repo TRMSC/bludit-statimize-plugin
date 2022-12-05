@@ -38,18 +38,14 @@ class pluginStatimize extends Plugin {
 
                 // FOOTER FILE
 
-                //$item = 'const re = /\[([^\[]*)\]\((.*)\)/; ';
-                //$item .= 'window.onload = funtion () { ';
                 $item .= 'items = [';
 
                 $supplementItems = preg_split("/\r\n|\n|\r/", $this->getValue("supplementItems"));
                 foreach ($supplementItems as $value) {
                         $item .= '"'.trim($value).'", ';
-                        //.pregmatch($re);
                 }
                 $item = rtrim($item, ', ');
                 $item .= ']; ';
-                //$item .= '}';
 
                 $fileJs = PATH_PLUGINS.$folder.'/add.js';
                 file_put_contents($fileJs, $item);
