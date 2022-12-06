@@ -2,8 +2,6 @@ const re = /\[([^\[]*)\]\((.*)\)/;
 let html = '';
 
 window.onload = () => {
-    //let theme = '<?php echo $Site->theme(); ?>';
-    //console.log(theme);
     for (let i=0; i<items.length; i++) {
         myMatch = items[i].match(re);
         if (myMatch != null && myMatch.length == 3) {

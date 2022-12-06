@@ -80,16 +80,5 @@ class pluginStatimize extends Plugin {
 
         }
 
-
-        public function pageEnd() {
-
-                //$theme = $Site->theme();
-                //$html = '<script>console.log("'.$Site->theme().'")</script>';
-                //$html = '<p>'.$Site->theme().'</p>';
-
-                return $html;
-
-        }
-
   
 }
