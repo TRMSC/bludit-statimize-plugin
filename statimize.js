@@ -2,6 +2,8 @@ const re = /\[([^\[]*)\]\((.*)\)/;
 let html = '';
 
 window.onload = () => {
+    //if ( document.getElementById('footer-src') ) console.log('smart');
+
     for (let i=0; i<items.length; i++) {
         myMatch = items[i].match(re);
         if (myMatch != null && myMatch.length == 3) {
