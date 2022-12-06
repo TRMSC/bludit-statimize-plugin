@@ -76,8 +76,16 @@ class pluginStatimize extends Plugin {
                 $html .= '<script src="..'.$file.'/add.js"/></script>';
                 $html .= '<script src="..'.$file.'/statimize.js"/></script>';
 
+                return $html;
+
+        }
+
+
+        public function pageEnd() {
+
                 //$theme = $Site->theme();
-                //$html .= '<script>console.log("'.$theme.'")</script>';
+                //$html = '<script>console.log("'.$Site->theme().'")</script>';
+                //$html = '<p>'.$Site->theme().'</p>';
 
                 return $html;
 
