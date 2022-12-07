@@ -52,12 +52,12 @@ class pluginStatimize extends Plugin {
 
                 // FOOTER STORE
 
-                $html .= '<hr><h4>'.$L->get('add-header').'</h4>';
-                $html .= '<p>'.$L->get('add-l1').'<br>';
-                $html .= $L->get('add-l2').'</p>';
+                $html .= '<hr><h4>'.$L->get('links-header').'</h4>';
+                $html .= '<p>'.$L->get('links-l1').'<br>';
+                $html .= $L->get('links-l2').'</p>';
                 $html .= '<textarea class="form-control" rows="3" name="supplementItems" id="supplementItems">'
                         .$this->getValue('supplementItems').'</textarea>';
-                $html .= '<sub>'.$L->get('add-tip').'</sub>';
+                $html .= '<sub>'.$L->get('links-tip').'</sub>';
 
                 return $html;
 

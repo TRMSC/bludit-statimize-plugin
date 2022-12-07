@@ -8,8 +8,8 @@
 	"remove-l1": "URLs statischer Seiten eingeben, um deren Einträge aus der Navigationsleiste zu entfernen.",
 	"remove-l2": "Für jede URL wird eine neue Zeile verwendet.",
 	"remove-tip": "Tip: URLs können komplett eingegeben bzw. kopiert werden - einmal vorkommende Teile reichen jedoch ebenso aus.",
-	"add-header": "Einträge dem Footer hinzufügen",
-	"add-l1": "Links im Markdown-Format eingeben: der Linktext steht in eckigen Klammern, gefolgt von der URL in runden Klammern.",
-	"add-l2": "Für jeden Markdown-Link wird eine neue Zeile verwendet.",
-	"add-tip": "Markdown-Schreibweise: [Linktext](URL)"
+	"links-header": "Verlinkungen im Footer einbinden",
+	"links-l1": "Links im Markdown-Format eingeben: der Linktext steht in eckigen Klammern, gefolgt von der URL in runden Klammern.",
+	"links-l2": "Für jeden Markdown-Link wird eine neue Zeile verwendet.",
+	"links-tip": "Markdown-Schreibweise: [Linktext](URL)"
 }
