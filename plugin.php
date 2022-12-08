@@ -6,7 +6,8 @@ class pluginStatimize extends Plugin {
           
                 $this->dbFields = array(
                         'concealItems' => '',
-                        'supplementItems' => ''
+                        'supplementItems' => '',
+                        'additionalText' => ''
                 );
           
         }
@@ -36,7 +37,7 @@ class pluginStatimize extends Plugin {
                         .$this->getValue('concealItems').'</textarea>';
                 $html .= '<sub>'.$L->get('remove-tip').'</sub>';
 
-                // FOOTER FILE
+                // FOOTER LINKS - FILE
 
                 $item .= 'items = [';
 
@@ -50,7 +51,7 @@ class pluginStatimize extends Plugin {
                 $fileJs = PATH_PLUGINS.$folder.'/add.js';
                 file_put_contents($fileJs, $item);
 
-                // FOOTER STORE
+                // FOOTER LINKS - STORE
 
                 $html .= '<hr><h4>'.$L->get('links-header').'</h4>';
                 $html .= '<p>'.$L->get('links-l1').'<br>';
@@ -58,6 +59,14 @@ class pluginStatimize extends Plugin {
                 $html .= '<textarea class="form-control" rows="3" name="supplementItems" id="supplementItems">'
                         .$this->getValue('supplementItems').'</textarea>';
                 $html .= '<sub>'.$L->get('links-tip').'</sub>';
+
+                // FOOTER TEXT - STORE
+
+                $html .= '<hr><h4>'.$L->get('text-header').'</h4>';
+                $html .= '<p>'.$L->get('text-l1');
+                $html .= '<textarea class="form-control" rows="3" name="additionalText" id="additionalText">'
+                        .$this->getValue('additionalText').'</textarea>';
+                $html .= '<sub>'.$L->get('text-tip').'</sub>';
 
                 return $html;
 
