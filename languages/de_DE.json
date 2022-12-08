@@ -11,5 +11,7 @@
 	"links-header": "Verlinkungen im Footer einbinden",
 	"links-l1": "Links im Markdown-Format eingeben: der Linktext steht in eckigen Klammern, gefolgt von der URL in runden Klammern.",
 	"links-l2": "Für jeden Markdown-Link wird eine neue Zeile verwendet.",
-	"links-tip": "Markdown-Schreibweise: [Linktext](URL)"
+	"links-tip": "Markdown-Schreibweise: [Linktext](URL)",
+	"text-header": "Text zum Footer hinzufügen",
+	"text-l1": "Ergänzend zum Footertext in den Bludit-Einstellungen kann im folgenden Feld ein weiterer Textbaustein hinzugefügt werden."
 }
