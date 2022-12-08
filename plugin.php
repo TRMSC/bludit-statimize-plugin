@@ -62,6 +62,10 @@ class pluginStatimize extends Plugin {
 
                 // FOOTER TEXT - STORE
 
+                
+
+                // FOOTER TEXT - STORE
+
                 $html .= '<hr><h4>'.$L->get('text-header').'</h4>';
                 $html .= '<p>'.$L->get('text-l1');
                 $html .= '<textarea class="form-control" rows="3" name="additionalText" id="additionalText">'
