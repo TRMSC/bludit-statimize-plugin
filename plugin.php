@@ -15,8 +15,11 @@ class pluginStatimize extends Plugin {
   
         public function form() {
 
-                // NAVBAR FILE
+                // ----------
+                // Save files
+                // ----------
 
+                // Prepare navbar
                 $concealItems = preg_split("/\r\n|\n|\r/", $this->getValue("concealItems"));
                 foreach ($concealItems as $value) {
                         $entry .= '.nav-link[href*="'.trim($value).'"]{display: none;} ';
@@ -24,11 +27,31 @@ class pluginStatimize extends Plugin {
 
                 $folder = explode('/', __FILE__);
                 $folder = $folder[count($folder)-2];
+
+                // Save navbar content
                 $file = PATH_PLUGINS.$folder.'/remove.css';
                 file_put_contents($file, $entry);
 
-                // NAVBAR STORE
+                // Prepare footer links
+                $item .= 'items = [';
+                $supplementItems = preg_split("/\r\n|\n|\r/", $this->getValue("supplementItems"));
+                foreach ($supplementItems as $value) {
+                        $item .= '"'.trim($value).'", ';
+                }
+                $item = rtrim($item, ', ');
+                $item .= ']; ';
 
+                // Prepare footer text
+
+                // Save footer parts
+                $fileJs = PATH_PLUGINS.$folder.'/add.js';
+                file_put_contents($fileJs, $item);
+
+                // ----------
+                // Create DOM
+                // ----------
+
+                // Prepare navbar
                 global $L;
                 $html = '<h4>'.$L->get('remove-header').'</h4>';
                 $html .= '<p>'.$L->get('remove-l1').'<br>';
@@ -37,22 +60,7 @@ class pluginStatimize extends Plugin {
                         .$this->getValue('concealItems').'</textarea>';
                 $html .= '<sub>'.$L->get('remove-tip').'</sub>';
 
-                // FOOTER LINKS - FILE
-
-                $item .= 'items = [';
-
-                $supplementItems = preg_split("/\r\n|\n|\r/", $this->getValue("supplementItems"));
-                foreach ($supplementItems as $value) {
-                        $item .= '"'.trim($value).'", ';
-                }
-                $item = rtrim($item, ', ');
-                $item .= ']; ';
-
-                $fileJs = PATH_PLUGINS.$folder.'/add.js';
-                file_put_contents($fileJs, $item);
-
-                // FOOTER LINKS - STORE
-
+                // Prepare footer links
                 $html .= '<hr><h4>'.$L->get('links-header').'</h4>';
                 $html .= '<p>'.$L->get('links-l1').'<br>';
                 $html .= $L->get('links-l2').'</p>';
@@ -60,17 +68,15 @@ class pluginStatimize extends Plugin {
                         .$this->getValue('supplementItems').'</textarea>';
                 $html .= '<sub>'.$L->get('links-tip').'</sub>';
 
-                // FOOTER TEXT - STORE
-
-                
-
-                // FOOTER TEXT - STORE
-
+                // Prepare footer text
                 $html .= '<hr><h4>'.$L->get('text-header').'</h4>';
                 $html .= '<p>'.$L->get('text-l1');
                 $html .= '<textarea class="form-control" rows="3" name="additionalText" id="additionalText">'
                         .$this->getValue('additionalText').'</textarea>';
 
+                // ---------------
+                // Return DOM tree
+                // ---------------
                 return $html;
 
         }
