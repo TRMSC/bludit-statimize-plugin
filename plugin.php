@@ -19,7 +19,7 @@ class pluginStatimize extends Plugin {
                 // Save files
                 // ----------
 
-                // Prepare navbar
+                // Prepare navbar (CSS)
                 $concealItems = preg_split("/\r\n|\n|\r/", $this->getValue("concealItems"));
                 foreach ($concealItems as $value) {
                         $entry .= '.nav-link[href*="'.trim($value).'"]{display: none;} ';
@@ -28,11 +28,11 @@ class pluginStatimize extends Plugin {
                 $folder = explode('/', __FILE__);
                 $folder = $folder[count($folder)-2];
 
-                // Save navbar content
+                // Save navbar content (CSS)
                 $file = PATH_PLUGINS.$folder.'/remove.css';
                 file_put_contents($file, $entry);
 
-                // Prepare footer links
+                // Prepare footer links (JS)
                 $item .= 'items = [';
                 $supplementItems = preg_split("/\r\n|\n|\r/", $this->getValue("supplementItems"));
                 foreach ($supplementItems as $value) {
@@ -41,9 +41,9 @@ class pluginStatimize extends Plugin {
                 $item = rtrim($item, ', ');
                 $item .= ']; ';
 
-                // Prepare footer text
+                // Prepare footer text (JS)
 
-                // Save footer parts
+                // Save footer parts (JS)
                 $fileJs = PATH_PLUGINS.$folder.'/add.js';
                 file_put_contents($fileJs, $item);
 
