@@ -19,14 +19,15 @@ class pluginStatimize extends Plugin {
                 // Save files
                 // ----------
 
+                // Prepare target path
+                $folder = explode('/', __FILE__);
+                $folder = $folder[count($folder)-2];
+
                 // Prepare navbar (CSS)
                 $concealItems = preg_split("/\r\n|\n|\r/", $this->getValue("concealItems"));
                 foreach ($concealItems as $value) {
                         $entry .= '.nav-link[href*="'.trim($value).'"]{display: none;} ';
                 }
-
-                $folder = explode('/', __FILE__);
-                $folder = $folder[count($folder)-2];
 
                 // Save navbar content (CSS)
                 $file = PATH_PLUGINS.$folder.'/remove.css';
@@ -74,9 +75,7 @@ class pluginStatimize extends Plugin {
                 $html .= '<textarea class="form-control" rows="3" name="additionalText" id="additionalText">'
                         .$this->getValue('additionalText').'</textarea>';
 
-                // ---------------
                 // Return DOM tree
-                // ---------------
                 return $html;
 
         }
