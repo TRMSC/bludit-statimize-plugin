@@ -64,5 +64,29 @@ editBludit = (html) => {
 };
 
 editDark = (html) => {
-    console.log('dark theme is active');
+
+    // Prepare setting
+    let footer = document.getElementsByClassName('container');
+    footer = footer[footer.length - 1];
+    let footerRow = document.createElement('div');
+    footerRow.classList.add('row');
+    footer.append(footerRow);
+
+    // Add footer text
+    if (text.length !== 0) {
+        let footerText = document.createElement('small');
+        footerText.innerHTML = text;
+        footerText.classList.add('text-secondary');
+        footerRow.append(footerText);
+    }
+    
+    // Add footer links
+    if (html.length !== 0) {
+        let footerLinks = document.createElement('div');
+        footerLinks.innerHTML = html;
+        footerLinks.style.display = 'flex';
+        footerLinks.style.columnGap = '10px';
+        footerLinks.style.justifyContent = 'center';
+        footerRow.append(footerLinks);
+    }
 };
