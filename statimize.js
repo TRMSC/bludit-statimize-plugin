@@ -16,6 +16,10 @@ prepareFooter = (theme) => {
 
 editSmart = (html) => {
     console.log('smart theme is active');
+    let footer = document.getElementById('footer-src');
+    let textArea = document.createElement('div');
+    textArea.textContent = text;
+    footer.append(textArea);
 };
 
 editBludit = (html) => {
