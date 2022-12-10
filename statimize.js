@@ -15,8 +15,6 @@ prepareFooter = (theme) => {
 };
 
 editSmart = (html) => {
-    console.log('smart theme is active');
-
     // Add footer links
     if (html.length !== 0) {
         let footerLinks = document.getElementById('footer-links');
@@ -26,15 +24,11 @@ editSmart = (html) => {
         footerSource.classList.remove('footer-right');
         footerSource.classList.add('footer-center');
     }
-
     // Add footer text
-    /*
-    let footer = document.getElementById('footer-src');
-    let textArea = document.createElement('div');
-    textArea.classList.add('row', 'text-white');
-    textArea.textContent = text;
-    footer.after(textArea);
-    */
+    if (text.length !== 0) {
+        let footerText = document.getElementById('footer-additional-text');
+        footerText.innerHTML = text;
+    }
 };
 
 editBludit = (html) => {
