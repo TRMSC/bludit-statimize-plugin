@@ -32,18 +32,37 @@ editSmart = (html) => {
 };
 
 editBludit = (html) => {
-    console.log('bludit default theme is active');
+
+    // Prepare setting
+    let target = document.getElementsByTagName('footer')[0];
+    let footerContainer = document.createElement('div');
+    footerContainer.classList.add('bg-dark');
+    let footerRow = document.createElement('div');
+    footerRow.classList.add('row');
+    footerRow.style.justifyContent = 'center';
+    footerRow.style.marginTop = '-20px';
+    footerRow.style.columnGap = '3em';
+    footerContainer.append(footerRow);
+    target.append(footerContainer);
+
+    // Add footer text
+    if (text.length !== 0) {
+        let footerText = document.createElement('div');
+        footerText.innerHTML = text;
+        footerText.classList.add('text-white');
+        footerRow.append(footerText);
+    }
+
+    // Add footer links
+    if (html.length !== 0) {
+        let footerLinks = document.createElement('div');
+        footerLinks.innerHTML = html;
+        footerLinks.style.display = 'flex';
+        footerLinks.style.columnGap = '10px';
+        footerRow.append(footerLinks);
+    }
 };
 
 editDark = (html) => {
     console.log('dark theme is active');
 };
-
-// ELEMENTS FOR LATER
-/*
-    let linkContainer = document.createElement('span');
-    linkContainer.innerHTML = html;
-    //document.getElementById('footer-src').append(linkContainer);
-    let place = document.getElementsByTagName('footer')[0].getElementsByTagName('p')[0];
-    place.append(linkContainer);
-*/
