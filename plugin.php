@@ -96,11 +96,22 @@ class pluginStatimize extends Plugin {
                 $html .= '<script src="..'.$file.'/add.js"/></script>';
                 $html .= '<script src="..'.$file.'/statimize.js"/></script>';
 
+                //global $site;
+                //$html .= '<script>prepareFooter("'.$site->theme().'");</script>';
+
+                return $html;
+
+        }
+
+
+        public function afterSiteLoad() {
+
+                // Call function for preparing footer
+
                 global $site;
                 $html .= '<script>prepareFooter("'.$site->theme().'");</script>';
 
                 return $html;
-
         }
 
   
