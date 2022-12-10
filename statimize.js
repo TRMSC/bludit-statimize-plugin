@@ -18,8 +18,9 @@ editSmart = (html) => {
     console.log('smart theme is active');
     let footer = document.getElementById('footer-src');
     let textArea = document.createElement('div');
+    textArea.classList.add('row');
     textArea.textContent = text;
-    footer.append(textArea);
+    footer.after(textArea);
 };
 
 editBludit = (html) => {
