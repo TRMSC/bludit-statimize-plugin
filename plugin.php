@@ -43,6 +43,9 @@ class pluginStatimize extends Plugin {
                 $item .= ']; ';
 
                 // Prepare footer text (JS)
+                $item .= 'text = "';
+                $item .= trim( $this->getValue("additionalText") );
+                $item .= '";';
 
                 // Save footer parts (JS)
                 $fileJs = PATH_PLUGINS.$folder.'/add.js';
