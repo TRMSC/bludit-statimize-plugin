@@ -82,6 +82,7 @@ class pluginStatimize extends Plugin {
                 $html .= '<p>'.$L->get('text-l1');
                 $html .= '<textarea class="form-control" rows="3" name="additionalText" id="additionalText">'
                         .$this->getValue('additionalText').'</textarea>';
+                $html .= '<sub>'.$L->get('text-tip').'</sub>';
 
                 // Return DOM tree
                 return $html;

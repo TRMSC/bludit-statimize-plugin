@@ -13,5 +13,6 @@
 	"links-l2": "Für jeden Markdown-Link wird eine neue Zeile verwendet.",
 	"links-tip": "Markdown-Schreibweise: [Linktext](URL)",
 	"text-header": "Text zum Footer hinzufügen",
-	"text-l1": "Ergänzend zum Footertext in den Bludit-Einstellungen kann im folgenden Feld ein weiterer Textbaustein hinzugefügt werden."
+	"text-l1": "Ergänzend zum Footertext in den Bludit-Einstellungen kann im folgenden Feld ein weiterer Textbaustein hinzugefügt werden.",
+	"text-tip": "Tip: Es kann reiner Text oder HTML-Code verarbeitet werden."
 }
