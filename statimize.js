@@ -8,7 +8,7 @@ prepareFooter = (theme) => {
             html += '<a class="text-warning" href="' + myMatch[2] + '">' + myMatch[1] + '</a>';
         }
     }
-    //if (html.length === 0) return; // UNCOMMENT LATER
+    
     theme === 'smart' ? editSmart(html) : null;
     theme === 'alternative' || theme === 'blogx' ? editBludit(html) : null;
     theme === 'darktheme' ? editDark(html) : null;
