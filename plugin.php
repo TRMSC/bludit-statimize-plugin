@@ -44,7 +44,12 @@ class pluginStatimize extends Plugin {
 
                 // Prepare footer text (JS)
                 $item .= 'text = "';
-                $item .= trim( $this->getValue("additionalText") );
+                $decode = html_entity_decode( $this->getValue("additionalText") );
+                $split = preg_split("/\r\n|\n|\r/", $decode);
+                foreach ($split as $value) {
+                        $item .= $value.'<br>';
+                }
+                $item = rtrim($item, '<br>');
                 $item .= '";';
 
                 // Save footer parts (JS)
