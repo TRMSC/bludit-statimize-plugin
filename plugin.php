@@ -86,7 +86,7 @@ class pluginStatimize extends Plugin {
 
         public function siteHead() {
 
-                // LOAD CSS AND JAVASCRIPTS
+                // Load CSS and JS
 
                 $folder = explode('/', __FILE__);
                 $folder = $folder[count($folder)-2];
@@ -95,9 +95,6 @@ class pluginStatimize extends Plugin {
                 $html = '<link rel="stylesheet" type="text/css" href="..'.$file.'/remove.css"/>';
                 $html .= '<script src="..'.$file.'/add.js"/></script>';
                 $html .= '<script src="..'.$file.'/statimize.js"/></script>';
-
-                //global $site;
-                //$html .= '<script>prepareFooter("'.$site->theme().'");</script>';
 
                 return $html;
 
