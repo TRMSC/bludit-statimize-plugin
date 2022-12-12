@@ -60,7 +60,7 @@ class pluginStatimize extends Plugin {
                 // Create DOM
                 // ----------
 
-                // Prepare navbar
+                // Create settings for navbar
                 global $L;
                 $html = '<h4>'.$L->get('remove-header').'</h4>';
                 $html .= '<p>'.$L->get('remove-l1').'<br>';
@@ -69,7 +69,7 @@ class pluginStatimize extends Plugin {
                         .$this->getValue('concealItems').'</textarea>';
                 $html .= '<sub>'.$L->get('remove-tip').'</sub>';
 
-                // Prepare footer links
+                // Create settings for footer links
                 $html .= '<hr><h4>'.$L->get('links-header').'</h4>';
                 $html .= '<p>'.$L->get('links-l1').'<br>';
                 $html .= $L->get('links-l2').'</p>';
@@ -77,7 +77,7 @@ class pluginStatimize extends Plugin {
                         .$this->getValue('supplementItems').'</textarea>';
                 $html .= '<sub>'.$L->get('links-tip').'</sub>';
 
-                // Prepare footer text
+                // Create settings for footer text
                 $html .= '<hr><h4>'.$L->get('text-header').'</h4>';
                 $html .= '<p>'.$L->get('text-l1');
                 $html .= '<textarea class="form-control" rows="3" name="additionalText" id="additionalText">'
@@ -92,16 +92,17 @@ class pluginStatimize extends Plugin {
 
         public function siteHead() {
 
-                // Load CSS and JS
-
+                // Get path for sources
                 $folder = explode('/', __FILE__);
                 $folder = $folder[count($folder)-2];
                 $file = HTML_PATH_PLUGINS.$folder;
 
+                // Load CSS and JS
                 $html = '<link rel="stylesheet" type="text/css" href="..'.$file.'/remove.css"/>';
                 $html .= '<script src="..'.$file.'/add.js"/></script>';
                 $html .= '<script src="..'.$file.'/statimize.js"/></script>';
 
+                // Return DOM tree
                 return $html;
 
         }
@@ -109,12 +110,13 @@ class pluginStatimize extends Plugin {
 
         public function afterSiteLoad() {
 
-                // Call function for preparing footer
-
+                // Create function call for preparing footer
                 global $site;
                 $html .= '<script>prepareFooter("'.$site->theme().'");</script>';
 
+                // Return DOM tree
                 return $html;
+                
         }
 
   
