@@ -70,7 +70,8 @@ class pluginStatimize extends Plugin {
                 $html .= '<sub>'.$L->get('remove-tip').'</sub>';
 
                 // Create settings for footer links
-                $html .= '<hr><h4>'.$L->get('links-header').'</h4>';
+                $html .= '<hr><h4>'.$L->get('links-header')
+                        .' <sup><span class="badge bg-warning rounded-pill border">beta</span></sup></h4>';
                 $html .= '<p>'.$L->get('links-l1').'<br>';
                 $html .= $L->get('links-l2').'</p>';
                 $html .= '<textarea class="form-control" rows="3" name="supplementItems" id="supplementItems">'
@@ -78,7 +79,8 @@ class pluginStatimize extends Plugin {
                 $html .= '<sub>'.$L->get('links-tip').'</sub>';
 
                 // Create settings for footer text
-                $html .= '<hr><h4>'.$L->get('text-header').'</h4>';
+                $html .= '<hr><h4>'.$L->get('text-header')
+                        .' <sup><span class="badge bg-warning rounded-pill border">beta</span></sup></h4>';
                 $html .= '<p>'.$L->get('text-l1');
                 $html .= '<textarea class="form-control" rows="3" name="additionalText" id="additionalText">'
                         .$this->getValue('additionalText').'</textarea>';
@@ -116,7 +118,7 @@ class pluginStatimize extends Plugin {
 
                 // Return DOM tree
                 return $html;
-                
+
         }
 
   
