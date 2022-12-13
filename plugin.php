@@ -69,35 +69,48 @@ class pluginStatimize extends Plugin {
                         "blogx",
                         "darktheme"
                 ); 
+                $inofficialSupport = '';
+                $noSupport = '';
+                $readonly = '';
+                if (!in_array($site->theme(), $supported)) {
+                        $inofficialSupport = 
+                                '<div class="alert alert-warning">'.$L->get('support-1').$site->theme().$L->get('support-2')
+                                .' <a href="https://github.com/TRMSC/bludit-statimize-plugin/issues" target="_blank"><button type="button" class="btn btn-light btn-sm">'
+                                .$L->get('support-btn-1').'</button></a></div>';
+                        $noSupport = 
+                                '<div class="alert alert-warning">'.$L->get('support-3').$site->theme().$L->get('support-4')
+                                .' <a href="https://github.com/TRMSC/bludit-statimize-plugin/issues" target="_blank"><button type="button" class="btn btn-light btn-sm">'
+                                .$L->get('support-btn-2').'</button></a></div>';
+                        $readonly = 'readonly';
+                }
 
                 // Create settings for navbar
                 $html = '<h4>'.$L->get('remove-header').'</h4>';
-                if (!in_array($site->theme(), $supported)) {
-                        $html .= '<div class="alert alert-warning">'.$L->get('support-1').$site->theme().$L->get('support-2')
-                                .' <button class="btn btn-light btn-sm">'.$L->get('support-btn-1').'</button></div>';
-                }
                 $html .= '<p>'.$L->get('remove-l1').'<br>';
                 $html .= $L->get('remove-l2').'</p>';
                 $html .= '<textarea class="form-control" rows="3" name="concealItems" id="concealItems">'
                         .$this->getValue('concealItems').'</textarea>';
                 $html .= '<sub>'.$L->get('remove-tip').'</sub>';
+                $html .= $inofficialSupport;
 
                 // Create settings for footer links
                 $html .= '<hr><h4>'.$L->get('links-header')
                         .' <sup><span class="badge bg-warning rounded-pill border">beta</span></sup></h4>';
                 $html .= '<p>'.$L->get('links-l1').'<br>';
                 $html .= $L->get('links-l2').'</p>';
-                $html .= '<textarea class="form-control" rows="3" name="supplementItems" id="supplementItems">'
+                $html .= '<textarea class="form-control" rows="3" name="supplementItems" id="supplementItems" '.$readonly.'>'
                         .$this->getValue('supplementItems').'</textarea>';
                 $html .= '<sub>'.$L->get('links-tip').'</sub>';
+                $html .= $noSupport;
 
                 // Create settings for footer text
                 $html .= '<hr><h4>'.$L->get('text-header')
                         .' <sup><span class="badge bg-warning rounded-pill border">beta</span></sup></h4>';
                 $html .= '<p>'.$L->get('text-l1');
-                $html .= '<textarea class="form-control" rows="3" name="additionalText" id="additionalText">'
+                $html .= '<textarea class="form-control" rows="3" name="additionalText" id="additionalText" '.$readonly.'>'
                         .$this->getValue('additionalText').'</textarea>';
                 $html .= '<sub>'.$L->get('text-tip').'</sub>';
+                $html .= $noSupport;
 
                 // Return DOM tree
                 return $html;
