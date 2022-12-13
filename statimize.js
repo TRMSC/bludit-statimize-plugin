@@ -1,4 +1,13 @@
+/**
+ * Prepare footer links for passing to theme based functions 
+ * 
+ * @function prepareFooter
+ * @param {string} theme Active theme
+ * 
+*/
 prepareFooter = (theme) => {
+
+    // Prepare footer links
     let html = '';
     const re = /\[([^\[]*)\]\((.*)\)/;
     for (let i=0; i<items.length; i++) {
@@ -8,11 +17,21 @@ prepareFooter = (theme) => {
         }
     }
     
+    // Passing to theme based functions
     theme === 'smart' ? editSmart(html) : null;
     theme === 'alternative' || theme === 'blogx' ? editBludit(html) : null;
     theme === 'darktheme' ? editDark(html) : null;
+
 };
 
+
+/**
+ * Implement links and additional text to footer for smart theme
+ * 
+ * @function editSmart
+ * @param {string} html Prepared dom for additional links
+ * 
+*/
 editSmart = (html) => {
 
     // Add footer links
@@ -30,8 +49,17 @@ editSmart = (html) => {
         let footerText = document.getElementById('footer-additional-text');
         footerText.innerHTML = text;
     }
+
 };
 
+
+/**
+ * Implement links and additional text to footer for bludit default themes
+ * 
+ * @function editBludit
+ * @param {string} html Prepared dom for additional links
+ * 
+*/
 editBludit = (html) => {
 
     // Prepare setting
@@ -62,8 +90,17 @@ editBludit = (html) => {
         footerLinks.style.columnGap = '10px';
         footerRow.append(footerLinks);
     }
+
 };
 
+
+/**
+ * Implement links and additional text to footer for dark theme
+ * 
+ * @function editDark
+ * @param {string} html Prepared dom for additional links
+ * 
+*/
 editDark = (html) => {
 
     // Prepare setting
@@ -90,4 +127,5 @@ editDark = (html) => {
         footerLinks.style.justifyContent = 'center';
         footerRow.append(footerLinks);
     }
+
 };
