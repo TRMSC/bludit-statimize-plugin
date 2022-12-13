@@ -73,8 +73,8 @@ class pluginStatimize extends Plugin {
                 // Create settings for navbar
                 $html = '<h4>'.$L->get('remove-header').'</h4>';
                 if (!in_array($site->theme(), $supported)) {
-                        $html .= '<div class="alert alert-warning">'.$L->get('support-1')
-                                .$site->theme().$L->get('support-2').'</div>';
+                        $html .= '<div class="alert alert-warning">'.$L->get('support-1').$site->theme().$L->get('support-2')
+                                .' <button class="btn btn-light btn-sm">'.$L->get('support-btn-1').'</button></div>';
                 }
                 $html .= '<p>'.$L->get('remove-l1').'<br>';
                 $html .= $L->get('remove-l2').'</p>';
