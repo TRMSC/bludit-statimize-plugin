@@ -1,7 +1,6 @@
-const re = /\[([^\[]*)\]\((.*)\)/;
-
 prepareFooter = (theme) => {
     let html = '';
+    const re = /\[([^\[]*)\]\((.*)\)/;
     for (let i=0; i<items.length; i++) {
         myMatch = items[i].match(re);
         if (myMatch != null && myMatch.length == 3) {
@@ -15,6 +14,7 @@ prepareFooter = (theme) => {
 };
 
 editSmart = (html) => {
+
     // Add footer links
     if (html.length !== 0) {
         let footerLinks = document.getElementById('footer-links');
@@ -24,6 +24,7 @@ editSmart = (html) => {
         footerSource.classList.remove('footer-right');
         footerSource.classList.add('footer-center');
     }
+
     // Add footer text
     if (text.length !== 0) {
         let footerText = document.getElementById('footer-additional-text');
