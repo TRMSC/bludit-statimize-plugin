@@ -60,9 +60,22 @@ class pluginStatimize extends Plugin {
                 // Create DOM
                 // ----------
 
-                // Create settings for navbar
+                // Handle variables
+                global $site;
                 global $L;
+                $supported = array(
+                        "smart",
+                        "alternative",
+                        "blogx",
+                        "darktheme"
+                ); 
+
+                // Create settings for navbar
                 $html = '<h4>'.$L->get('remove-header').'</h4>';
+                if (!in_array($site->theme(), $supported)) {
+                        $html .= '<div class="alert alert-warning">'.$L->get('support-1')
+                                .$site->theme().$L->get('support-2').'</div>';
+                }
                 $html .= '<p>'.$L->get('remove-l1').'<br>';
                 $html .= $L->get('remove-l2').'</p>';
                 $html .= '<textarea class="form-control" rows="3" name="concealItems" id="concealItems">'
