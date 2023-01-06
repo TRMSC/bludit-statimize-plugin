@@ -34,8 +34,8 @@ class pluginStatimize extends Plugin {
                 }
 
                 // Save navbar content (CSS)
-                $file = PATH_PLUGINS.$folder.'/data/remove.css';
-                file_put_contents($file, $entry);
+                $fileCss = PATH_PLUGINS.$folder.'/data/remove.css';
+                file_put_contents($fileCss, $entry);
 
                 // Prepare footer links (JS)
                 $item .= 'items = [';
