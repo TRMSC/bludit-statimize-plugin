@@ -5,12 +5,13 @@ class pluginStatimize extends Plugin {
         public function init() {
           
                 $this->dbFields = array(
-                        'concealItems' => '',
-                        'supplementItems' => '',
-                        'additionalText' => ''
+                        'removeNavLinks' => '',
+                        'addFooterLinks' => '',
+                        'addFooterText' => ''
                 );
           
         }
+
   
   
         public function form() {
@@ -24,8 +25,8 @@ class pluginStatimize extends Plugin {
                 $folder = $folder[count($folder)-2];
 
                 // Prepare navbar (CSS)
-                $concealItems = preg_split("/\r\n|\n|\r/", $this->getValue("concealItems"));
-                foreach ($concealItems as $value) {
+                $removeNavLinks = preg_split("/\r\n|\n|\r/", $this->getValue("removeNavLinks"));
+                foreach ($removeNavLinks as $value) {
                         $entry .= '.nav-link[href*="'.trim($value).'"]{display: none;} ';
                 }
 
@@ -35,8 +36,8 @@ class pluginStatimize extends Plugin {
 
                 // Prepare footer links (JS)
                 $item .= 'items = [';
-                $supplementItems = preg_split("/\r\n|\n|\r/", $this->getValue("supplementItems"));
-                foreach ($supplementItems as $value) {
+                $addFooterLinks = preg_split("/\r\n|\n|\r/", $this->getValue("addFooterLinks"));
+                foreach ($addFooterLinks as $value) {
                         $item .= '"'.trim($value).'", ';
                 }
                 $item = rtrim($item, ', ');
@@ -44,7 +45,7 @@ class pluginStatimize extends Plugin {
 
                 // Prepare footer text (JS)
                 $item .= 'text = "<span>';
-                $prepare = addslashes(html_entity_decode($this->getValue("additionalText")));
+                $prepare = addslashes(html_entity_decode($this->getValue("addFooterText")));
                 $split = preg_split("/\r\n|\n|\r/", $prepare);
                 foreach ($split as $value) {
                         $item .= $value.'<br>';
@@ -88,8 +89,8 @@ class pluginStatimize extends Plugin {
                 $html = '<h4>'.$L->get('remove-header').'</h4>';
                 $html .= '<p>'.$L->get('remove-l1').'<br>';
                 $html .= $L->get('remove-l2').'</p>';
-                $html .= '<textarea class="form-control" rows="3" name="concealItems" id="concealItems">'
-                        .$this->getValue('concealItems').'</textarea>';
+                $html .= '<textarea class="form-control" rows="3" name="removeNavLinks" id="removeNavLinks">'
+                        .$this->getValue('removeNavLinks').'</textarea>';
                 $html .= '<sub>'.$L->get('remove-tip').'</sub>';
                 $html .= $inofficialSupport;
 
@@ -97,16 +98,16 @@ class pluginStatimize extends Plugin {
                 $html .= '<hr><h4>'.$L->get('links-header').'</h4>';
                 $html .= '<p>'.$L->get('links-l1').'<br>';
                 $html .= $L->get('links-l2').'</p>';
-                $html .= '<textarea class="form-control" rows="3" name="supplementItems" id="supplementItems" '.$readonly.'>'
-                        .$this->getValue('supplementItems').'</textarea>';
+                $html .= '<textarea class="form-control" rows="3" name="addFooterLinks" id="addFooterLinks" '.$readonly.'>'
+                        .$this->getValue('addFooterLinks').'</textarea>';
                 $html .= '<sub>'.$L->get('links-tip').'</sub>';
                 $html .= $noSupport;
 
                 // Create settings for footer text
                 $html .= '<hr><h4>'.$L->get('text-header').'</h4>';
                 $html .= '<p>'.$L->get('text-l1');
-                $html .= '<textarea class="form-control" rows="3" name="additionalText" id="additionalText" '.$readonly.'>'
-                        .$this->getValue('additionalText').'</textarea>';
+                $html .= '<textarea class="form-control" rows="3" name="addFooterText" id="addFooterText" '.$readonly.'>'
+                        .$this->getValue('addFooterText').'</textarea>';
                 $html .= '<sub>'.$L->get('text-tip').'</sub>';
                 $html .= $noSupport;
 
@@ -114,6 +115,7 @@ class pluginStatimize extends Plugin {
                 return $html;
 
         }
+
 
 
         public function siteHead() {
@@ -132,6 +134,7 @@ class pluginStatimize extends Plugin {
                 return $html;
 
         }
+
 
 
         public function afterSiteLoad() {
