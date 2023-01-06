@@ -23,6 +23,9 @@ class pluginStatimize extends Plugin {
                 // Prepare target path
                 $folder = explode('/', __FILE__);
                 $folder = $folder[count($folder)-2];
+                if (!is_dir(PATH_PLUGINS.$folder.'/data')) {
+                        mkdir(PATH_PLUGINS.$folder.'/data');
+                }
 
                 // Prepare navbar (CSS)
                 $removeNavLinks = preg_split("/\r\n|\n|\r/", $this->getValue("removeNavLinks"));
@@ -31,7 +34,7 @@ class pluginStatimize extends Plugin {
                 }
 
                 // Save navbar content (CSS)
-                $file = PATH_PLUGINS.$folder.'/remove.css';
+                $file = PATH_PLUGINS.$folder.'/data/remove.css';
                 file_put_contents($file, $entry);
 
                 // Prepare footer links (JS)
@@ -54,7 +57,7 @@ class pluginStatimize extends Plugin {
                 $item .= '</span>";';
 
                 // Save footer parts (JS)
-                $fileJs = PATH_PLUGINS.$folder.'/add.js';
+                $fileJs = PATH_PLUGINS.$folder.'/data/add.js';
                 file_put_contents($fileJs, $item);
 
                 // ----------
@@ -126,8 +129,8 @@ class pluginStatimize extends Plugin {
                 $file = HTML_PATH_PLUGINS.$folder;
 
                 // Load CSS and JS
-                $html = '<link rel="stylesheet" type="text/css" href="..'.$file.'/remove.css"/>';
-                $html .= '<script src="..'.$file.'/add.js"/></script>';
+                $html = '<link rel="stylesheet" type="text/css" href="..'.$file.'/data/remove.css"/>';
+                $html .= '<script src="..'.$file.'/data/add.js"/></script>';
                 $html .= '<script src="..'.$file.'/statimize.js"/></script>';
 
                 // Return DOM tree
