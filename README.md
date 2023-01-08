@@ -1,7 +1,7 @@
 # Bludit - Statimize plugin
 
 Customize visibility of static pages in the navigation bar by hiding their items.  
-Support for adding items to the footer is planned.
+Since version v.0.2.0 it is possible to add links and an additional text block with html functionality to the footer.
 
 ## Compatibility
 
