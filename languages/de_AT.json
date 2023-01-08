@@ -2,10 +2,23 @@
 	"plugin-data":
 	{
 		"name": "Statimize",
-		"description": "Sichtbarkeit statischer Seiten anpassen, indem deren Einträge aus der Navigationsleiste entfernt werden."
+		"description": "Ausgewählte Einträge statischer Seiten aus der Navigationsleiste entfernen und Links sowie Text oder HTML-Elemente im Footer einbinden."
 	},
 	"remove-header": "Einträge in der Navigationsleiste entfernen",
 	"remove-l1": "URLs statischer Seiten eingeben, um deren Einträge aus der Navigationsleiste zu entfernen.",
 	"remove-l2": "Für jede URL wird eine neue Zeile verwendet.",
-	"remove-tip": "Tip: URLs können komplett eingegeben bzw. kopiert werden - einmal vorkommende Teile reichen jedoch ebenso aus."
+	"remove-tip": "Tip: URLs können komplett eingegeben bzw. kopiert werden - einmal vorkommende Teile reichen jedoch ebenso aus.",
+	"links-header": "Verlinkungen im Footer einbinden",
+	"links-l1": "Links im Markdown-Format eingeben: der Linktext steht in eckigen Klammern, gefolgt von der URL in runden Klammern.",
+	"links-l2": "Für jeden Markdown-Link wird eine neue Zeile verwendet.",
+	"links-tip": "Markdown-Schreibweise: [Linktext](URL)",
+	"text-header": "Text zum Footer hinzufügen",
+	"text-l1": "Ergänzend zum Footertext in den Bludit-Einstellungen kann im folgenden Feld ein weiterer Textbaustein hinzugefügt werden.",
+	"text-tip": "Tip: Es kann reiner Text oder HTML-Code verarbeitet werden.",
+	"support-1": "Dieses Feature wird im aktuellen Theme (",
+	"support-2": ") nicht offiziell unterstützt, könnte jedoch kompatibel sein.",
+	"support-btn-1": "Feedback",
+	"support-3": "Dieses Feature steht für das aktuelle Theme (",
+	"support-4": ") noch nicht zur Verfügung.",
+	"support-btn-2": "Implementierung vorschlagen"
 }
