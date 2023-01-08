@@ -8,5 +8,17 @@
 	"remove-l1": "Type in static site urls for removing their items from the navbar.",
 	"remove-l2": "Use a several line for every url.",
 	"remove-tip": "Tip: You can type in respectively copy the urls completely but unique parts of the urls are also sufficient.",
-	"add-header": "Add items to the footer"
+	"links-header": "Add items to the footer",
+	"links-l1": "Enter links in Markdown format: the link text is in square brackets, followed by the URL in round brackets.",
+	"links-l2": "A new line is used for each Markdown link.",
+	"links-tip": "Markdown syntax: [Linktext](URL)",
+	"text-header": "Add text to the footer",
+	"text-l1": "In addition to the footer text in the Bludit settings, an additional block of text can be added in the following field.",
+	"text-tip": "Tip: Plain text or HTML code can be processed.",
+	"support-1": "This feature is not officially supported in the current theme (",
+	"support-2": ") but maybe it could be compatible.",
+	"support-btn-1": "Feedback",
+	"support-3": "This feature is not yet available for the current theme (",
+	"support-4": ") is not yet available.",
+	"support-btn-2": "Suggest implementation"
 }
